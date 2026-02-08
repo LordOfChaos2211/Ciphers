@@ -8,7 +8,7 @@ public static void main(String[] args) {
     System.out.println("1. Atbash Cipher \n" +
             "2. Caesar Cipher \n" +
             "3. Vigenere Cipher \n" +
-            "4. Playfair Cipher(WIP)" );
+            "4. Playfair Cipher" );
     System.out.println("Choose the cipher you want");
     boolean validIn = false;
     String message;
@@ -45,7 +45,18 @@ public static void main(String[] args) {
                     validIn = true;
                     break;
                 case 4:
-                    System.out.println("The cipher you selected is current unimplemented. Please select a different cipher");
+                    System.out.println("You have selected the Playfair cipher");
+                    Playfair_Cipher PlEncipherer = new Playfair_Cipher();
+                    System.out.println("Please enter your key");
+                    key = input.nextLine();
+                    while(!PlEncipherer.validateKey(key)){
+                        System.out.println("Invalid key entered. Please enter a valid key. \nA valid key consists of non-duplicate letters");
+                        key = input.nextLine();
+                    }
+                    System.out.println("Please enter your message");
+                    message = input.nextLine();
+                    System.out.println("Your enciphered message is as follows:\n" + PlEncipherer.encipher(key,message));
+                    validIn = true;
                     break;
                 default:
                     System.out.println("Invalid input detected please choose from the above options");
