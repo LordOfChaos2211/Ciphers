@@ -1,5 +1,3 @@
-
-
 public class Atbash_Cipher {
 
     public Atbash_Cipher(){

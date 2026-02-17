@@ -1,16 +1,17 @@
-import java.util.*;
 public class Autokey_Cipher {
-    public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
-        String key = input.nextLine();
-        String message = input.nextLine();
-        String enciphered;
+
+    public Autokey_Cipher(){
+
+    }
+    public String processString(String input){
+        input = input.toLowerCase();
+        input = input.replace(" ", "");
+        return input;
+    }
+
+    public String encipher(String message, String key, String processedMessage){
         char[] processing = message.toCharArray();
-        key = key.toLowerCase();
-        key = key.replace(" ","");
-        message = message.toLowerCase();
-        message = message.replace(" ","");
-        key = key.concat(message);
+        key = key.concat(processedMessage);
         char[] keyCharArray = key.toCharArray();
         char[] encoded = new char[processing.length];
 
@@ -32,7 +33,6 @@ public class Autokey_Cipher {
                 encoded[i] = ' ';
             }
         }
-        enciphered = new String(encoded);
-        System.out.println(enciphered);
+        return new String(encoded);
     }
 }

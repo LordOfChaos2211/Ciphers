@@ -1,5 +1,3 @@
-
-
 public class Vigenere_Cipher {
 
     public Vigenere_Cipher(){
